@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aqeel Ahmad | Python Developer · Web Scraping & AI Automation</title>
+  <meta name="description"
+    content="Aqeel Ahmad – Python Developer specializing in Web Scraping, AI Automation, Django, and Full-Stack Web Development. BS CS graduate with CGPA 3.75/4.0 from University of Agriculture D.I.Khan." />
+  <meta name="keywords"
+    content="Aqeel Ahmad, Python Developer, Web Scraping, AI Automation, Django, Scrapy, MongoDB, Full Stack Developer, Mansehra Pakistan" />
+  <meta property="og:title" content="Aqeel Ahmad | Python Developer" />
+  <meta property="og:description" content="Portfolio of Aqeel Ahmad – Python Developer & Web Scraping Specialist" />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Inline critical SVG icons -->
+  <style>
+    .icon-arrow {
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- PAGE LOADER -->
+  <div class="page-loader" id="page-loader">
+    <div class="loader-inner">
+      <div class="loader-logo">Aqeel Ahmad</div>
+      <div class="loader-bar">
+        <div class="loader-bar-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CANVAS BACKGROUND -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- ══════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════ -->
+  <nav id="navbar" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" id="nav-logo">AQEEL AHMAD</a>
+      <div class="nav-links" id="nav-links">
+        <a href="#about" id="nav-about">About</a>
+        <a href="#skills" id="nav-skills">Skills</a>
+        <a href="#experience" id="nav-experience">Experience</a>
+        <a href="#education" id="nav-education">Education</a>
+        <a href="#projects" id="nav-projects">Projects</a>
+        <a href="#languages" id="nav-languages">Languages</a>
+        <a href="#activities" id="nav-activities">Activities</a>
+        <a href="#contact" id="nav-contact">Contact</a>
+      </div>
+      <div class="nav-cta">
+        <a href="Aqeel_Ahmad_CV.pdf" download="Aqeel_Ahmad_CV.pdf" class="nav-download" id="nav-download-btn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+          Download CV
+        </a>
+      </div>
+      <button class="hamburger" id="hamburger-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="#about" id="mob-about">About</a>
+    <a href="#skills" id="mob-skills">Skills</a>
+    <a href="#experience" id="mob-experience">Experience</a>
+    <a href="#education" id="mob-education">Education</a>
+    <a href="#projects" id="mob-projects">Projects</a>
+    <a href="#languages" id="mob-languages">Languages</a>
+    <a href="#activities" id="mob-activities">Activities</a>
+    <a href="#contact" id="mob-contact">Contact</a>
+    <a href="Aqeel_Ahmad_CV.pdf" download="Aqeel_Ahmad_CV.pdf" class="mobile-download" id="mob-download-btn">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+        <polyline points="7 10 12 15 17 10" />
+        <line x1="12" y1="15" x2="12" y2="3" />
+      </svg>
+      Download CV
+    </a>
+  </div>
+
+  <!-- ══════════════════════════════════════
+     HERO SECTION
+══════════════════════════════════════ -->
+  <section id="hero" aria-label="Hero">
+    <div class="hero-inner">
+      <!-- Left: Text Content -->
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          Available for Opportunities
+        </div>
+
+        <h1 class="hero-name">
+          <span class="gradient-text">Aqeel</span><br>Ahmad
+        </h1>
+
+        <div class="hero-title-wrap">
+          <span class="hero-title-prefix">I'm a</span>
+          <span id="typed-text"></span><span class="cursor-blink"></span>
+        </div>
+
+        <p class="hero-desc">
+          Python Developer with a solid foundation in Computer Science and a strong background in full-stack web
+          development. Currently focusing on web scraping and AI automation — engineering data pipelines, building
+          functional data-driven applications.
+        </p>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-value">3.75</div>
+            <div class="stat-label">CGPA / 4.0</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-value">8+</div>
+            <div class="stat-label">Key Projects</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-value">5</div>
+            <div class="stat-label">Roles Held</div>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary" id="hero-view-work-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="m9 18 6-6-6-6" />
+            </svg>
+            View My Work
+          </a>
+          <a href="Aqeel_Ahmad_CV.pdf" download="Aqeel_Ahmad_CV.pdf" class="btn btn-outline" id="hero-download-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            Download CV
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Photo Card -->
+      <div class="hero-photo-wrap">
+        <div class="photo-card">
+          <div class="photo-glow"></div>
+          <div class="photo-frame">
+            <img src="aqeel_profile.jpg" alt="Aqeel Ahmad – Python Developer" loading="eager" />
+          </div>
+          <div class="photo-badge">
+            <div class="photo-badge-val">BS CS</div>
+            <div class="photo-badge-label">UAD · 2025</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+     ABOUT SECTION
+══════════════════════════════════════ -->
+  <section id="about" aria-label="About Me">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">About Me</div>
+        <h2 class="section-title">Who I Am &amp; What I Do</h2>
+        <p class="section-subtitle">A passionate Python developer combining deep technical expertise with a drive to
+          build meaningful, data-driven solutions.</p>
+      </div>
+
+      <div class="about-grid">
+        <!-- Personal Info Card -->
+        <div class="glass-card about-info-card reveal-left">
+          <div class="info-title">Personal Details</div>
+          <div class="info-list">
+            <div class="info-item">
+              <div class="info-icon">👤</div>
+              <div>
+                <div class="info-key">Full Name</div>
+                <div class="info-val">Aqeel Ahmad</div>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">📅</div>
+              <div>
+                <div class="info-key">Date of Birth</div>
+                <div class="info-val">22 January 2004</div>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">📍</div>
+              <div>
+                <div class="info-key">Current Location</div>
+                <div class="info-val">Mansehra, Pakistan</div>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">🌍</div>
+              <div>
+                <div class="info-key">Nationality</div>
+                <div class="info-val">Pakistani</div>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">🏘️</div>
+              <div>
+                <div class="info-key">Place of Birth</div>
+                <div class="info-val">Dhakki, Pakistan</div>
+              </div>
+            </div>
+            <!-- <div class="info-item">
+              <div class="info-icon">🪪</div>
+              <div>
+                <div class="info-key">ID</div>
+                <div class="info-val" style="font-family:'JetBrains Mono',monospace;font-size:13px;">1210332400755</div>
+              </div>
+            </div> -->
+            <div class="info-item">
+              <div class="info-icon">💼</div>
+              <div>
+                <div class="info-key">Preferred Roles</div>
+                <div class="info-val">Python Dev · Web Scraping Specialist · AI Automation Engineer · Full-Stack
+                  Developer</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: About Content -->
+        <div class="about-content-right reveal-right">
+          <p class="about-intro">
+            I'm a <strong>Python Developer</strong> with a solid foundation in Computer Science and a strong background
+            in full-stack web development. Currently focusing on <strong>web scraping and AI automation</strong>, I
+            write scripts to extract and process complex data while building functional, data-driven web applications.
+          </p>
+          <p class="about-intro">
+            Combining a passion for modern technology with hands-on skills in <strong>Django, HTML, CSS, and
+              JavaScript</strong>, I genuinely enjoy the entire process — from designing clean user interfaces to
+            engineering backend architectures and data pipelines.
+          </p>
+
+          <div class="about-highlights">
+            <div class="highlight-card">
+              <div class="highlight-icon ">🕷️</div>
+              <div class="highlight-title">Web Scraping & Crawling</div>
+              <div class="highlight-text">Scrapy, Scrapyd, PyMongo — building robust, scalable web crawlers and data
+                extraction engines</div>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-icon">🤖</div>
+              <div class="highlight-title">AI Automation</div>
+              <div class="highlight-text">Automating complex workflows and building intelligent data pipelines with
+                Python and machine learning</div>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-icon">🌐</div>
+              <div class="highlight-title">Full-Stack Development</div>
+              <div class="highlight-text">Django, HTML5, CSS3, JavaScript — from clean UIs to robust backend
+                architectures</div>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-icon">🗄️</div>
+              <div class="highlight-title">Data Pipelines</div>
+              <div class="highlight-text">MongoDB, PostgreSQL, PyMongo — validating, cleaning, and ingesting large-scale
+                datasets</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+     SKILLS SECTION
+══════════════════════════════════════ -->
+  <section id="skills" aria-label="Skills">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Expertise</div>
+        <h2 class="section-title">Skills &amp; Technologies</h2>
+        <p class="section-subtitle">A comprehensive overview of my technical toolkit — from programming languages to
+          tools and frameworks.</p>
+      </div>
+
+      <div class="skills-filter reveal">
+        <button class="filter-btn active" data-filter="all" id="skill-filter-all">All</button>
+        <button class="filter-btn" data-filter="web" id="skill-filter-web">Web Development</button>
+        <button class="filter-btn" data-filter="python" id="skill-filter-python">Python & Automation</button>
+        <button class="filter-btn" data-filter="data" id="skill-filter-data">Data & Databases</button>
+        <button class="filter-btn" data-filter="tools" id="skill-filter-tools">Tools & Software</button>
+      </div>
+
+      <div class="skills-grid" id="skills-grid">
+        <!-- Web Development -->
+        <div class="skill-card reveal" data-category="web">
+          <div class="skill-header">
+            <div class="skill-icon">🌐</div>
+            <div>
+              <div class="skill-name">HTML5</div>
+              <div class="skill-category">Web Development</div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="92"></div>
+          </div>
+        </div>
+        <div class="skill-card reveal" data-category="web">
+          <div class="skill-header">
+            <div class="skill-icon">🎨</div>
+            <div>
+              <div class="skill-name">CSS3</div>
+              <div class="skill-category">Web Development</div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="88"></div>
+          </div>
+        </div>
+        <div class="skill-card reveal" data-category="web">
+          <div class="skill-header">
+            <div class="skill-icon">⚡</div>
+            <div>
+              <div class="skill-name">JavaScript</div>
+              <div class="skill-category">Web Development</div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="80"></div>
+          </div>
+        </div>
+        <div class="skill-card reveal" data-category="web">
+          <div class="skill-header">
+            <div class="skill-icon">🐍</div>
+            <div>
+              <div class="skill-name">Django</div>
+              <div class="skill-category">Web Framework</div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="82"></div>
+          </div>
+        </div>
+        <div class="skill-card reveal" data-category="web">
+          <div class="skill-header">
+            <div class="skill-icon">📱</div>
+            <div>
+              <div class="skill-name">Responsive Design</div>
+              <div class="skill-category">Web Development</div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="90"></div>
+          </div>
+        </div>
+        <!-- Python & Automation -->
+        <div class="skill-card reveal" data-category="python">
+          <div class="skill-header">
+            <div class="skill-icon">🐍</div>
+            <div>
+              <div class="skill-name">Python</div>
+              <div class="skill-category">Programming Language</div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="90"></div>
+          </div>
+        </div>
+        <div class="skill-card reveal" data-category="python">
+          <div class="skill-header">
+            <div class="skill-icon">🕷️</div>
+            <div>
+              <div class="skill-name">Scrapy</div>
+              <div class="skill-category">Web Scraping</div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="88"></div>
+          </div>
+        </div>
+        <div class="skill-card reveal" data-category="python">
+          <div class="skill-header">
+            <div class="skill-icon">🚀</div>
+            <div>
+              <div class="skill-name">Scrapyd</div>
+              <div class="skill-category">Crawler Deployment</div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="82"></div>
+          </div>
+        </div>
+        <div class="skill-card reveal" data-category="python">
+          <div class="skill-header">
+            <div class="skill-icon">🤖</div>
+            <div>
+              <div class="skill-name">AI Automation</div>
+              <div class="skill-category">Python & AI</div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="80"></div>
+          </div>
+        </div>
+        <div class="skill-card reveal" data-category="python">
+          <div class="skill-header">
+            <div class="skill-icon">📊</div>
+            <div>
+              <div class="skill-name">Scikit-learn</div>
+              <div class="skill-category">Machine Learning</div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="72"></div>
+          </div>
+        </div>
+        <!-- Data & Databases -->
+        <div class="skill-card reveal" data-category="data">
+          <div class="skill-header">
+            <div class="skill-icon">🍃</div>
+            <div>
+              <div class="skill-name">MongoDB</div>
+              <div class="skill-category">NoSQL Database</div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="85"></div>
+          </div>
+        </div>
+        <div class="skill-card reveal" data-category="data">
+          <div class="skill-header">
+            <div class="skill-icon">🐘</div>
+            <div>
+              <div class="skill-name">PostgreSQL</div>
+              <div class="skill-category">Relational Database</div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="78"></div>
+          </div>
+        </div>
+        <div class="skill-card reveal" data-category="data">
+          <div class="skill-header">
+            <div class="skill-icon">🔗</div>
+            <div>
+              <div class="skill-name">PyMongo</div>
+              <div class="skill-category">Data Pipeline</div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="87"></div>
+          </div>
+        </div>
+        <div class="skill-card reveal" data-category="data">
+          <div class="skill-header">
+            <div class="skill-icon">📋</div>
+            <div>
+              <div class="skill-name">Reporting</div>
+              <div class="skill-category">Data & Analysis</div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="78"></div>
+          </div>
+        </div>
+        <!-- Tools -->
+        <div class="skill-card reveal" data-category="tools">
+          <div class="skill-header">
+            <div class="skill-icon">💻</div>
+            <div>
+              <div class="skill-name">VS Code</div>
+              <div class="skill-category">Development Tool</div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="95"></div>
+          </div>
+        </div>
+        <div class="skill-card reveal" data-category="tools">
+          <div class="skill-header">
+            <div class="skill-icon">📱</div>
+            <div>
+              <div class="skill-name">ODK / KoboToolbox</div>
+              <div class="skill-category">Data Collection</div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="80"></div>
+          </div>
+        </div>
+        <div class="skill-card reveal" data-category="tools">
+          <div class="skill-header">
+            <div class="skill-icon">🎭</div>
+            <div>
+              <div class="skill-name">Adobe Photoshop</div>
+              <div class="skill-category">Design Tool</div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="70"></div>
+          </div>
+        </div>
+        <div class="skill-card reveal" data-category="tools">
+          <div class="skill-header">
+            <div class="skill-icon">✨</div>
+            <div>
+              <div class="skill-name">Canva</div>
+              <div class="skill-category">Design Tool</div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="85"></div>
+          </div>
+        </div>
+        <div class="skill-card reveal" data-category="tools">
+          <div class="skill-header">
+            <div class="skill-icon">📊</div>
+            <div>
+              <div class="skill-name">MS Office / Excel</div>
+              <div class="skill-category">Productivity</div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="80"></div>
+          </div>
+        </div>
+        <div class="skill-card reveal" data-category="tools">
+          <div class="skill-header">
+            <div class="skill-icon">🔧</div>
+            <div>
+              <div class="skill-name">Git / GitHub</div>
+              <div class="skill-category">Version Control</div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="83"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+     EXPERIENCE SECTION
+══════════════════════════════════════ -->
+  <section id="experience" aria-label="Work Experience">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Experience</div>
+        <h2 class="section-title">Work Experience</h2>
+        <p class="section-subtitle">A track record of delivering results across development, education, and automation
+          roles.</p>
+      </div>
+
+      <div class="timeline">
+
+        <!-- Job 1: Developer 360 -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <div>
+              <div class="timeline-role">Python Developer</div>
+              <div class="timeline-company">Developer 360</div>
+            </div>
+            <div class="timeline-date">30 Jun 2026 – Present</div>
+          </div>
+          <div class="timeline-location">📍 Mansehra, Pakistan</div>
+          <div class="timeline-bullets">
+            <div class="timeline-bullet">Developing web scraping solutions and AI automation scripts using Python</div>
+            <div class="timeline-bullet">Specializing in Web Scraping &amp; AI Automation for production environments
+            </div>
+            <div class="timeline-bullet">Building and maintaining data extraction pipelines for complex multi-page
+              websites</div>
+          </div>
+        </div>
+
+        <!-- Job 2: LearnOBots / IMSG -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <div>
+              <div class="timeline-role">STEAM Teacher</div>
+              <div class="timeline-company">LearnOBoats – IMSG (I-VIII) Bain Nala</div>
+            </div>
+            <div class="timeline-date">15 Dec 2025 – 01 May 2026</div>
+          </div>
+          <div class="timeline-location">📍 Islamabad, Pakistan</div>
+          <div class="timeline-bullets">
+            <div class="timeline-bullet">Delivered STEAM (Science, Technology, Engineering, Arts &amp; Mathematics)
+              education to school students</div>
+            <div class="timeline-bullet">Designed curriculum integrating digital tools and hands-on technology
+              experiences</div>
+            <div class="timeline-bullet">Mentored students in coding basics, robotics concepts, and digital literacy
+            </div>
+          </div>
+          <a href="https://tinyurl.com/TechFellow-Aqeeel" target="_blank" rel="noopener" class="timeline-link"
+            id="exp-learnobots-link">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+            View Reference
+          </a>
+        </div>
+
+        <!-- Job 3: IIUI School PWD -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <div>
+              <div class="timeline-role">Computer Science Lecturer</div>
+              <div class="timeline-company">IIUI School PWD Campus Islamabad</div>
+            </div>
+            <div class="timeline-date">03 Nov 2025 – 15 Dec 2025</div>
+          </div>
+          <div class="timeline-location">📍 Islamabad, Pakistan</div>
+          <div class="timeline-bullets">
+            <div class="timeline-bullet">Delivered computer science lectures and practical lab sessions</div>
+            <div class="timeline-bullet">Taught programming fundamentals, web technologies, and software concepts</div>
+            <div class="timeline-bullet">Evaluated student performance through assessments and assignments</div>
+          </div>
+        </div>
+
+        <!-- Job 4: Al-Abbas Science School -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <div>
+              <div class="timeline-role">Computer Teacher</div>
+              <div class="timeline-company">Al-Abbas Science School and College New Chura</div>
+            </div>
+            <div class="timeline-date">01 Sep 2025 – 01 Nov 2025</div>
+          </div>
+          <div class="timeline-location">📍 Dhakki, Pakistan</div>
+          <div class="timeline-bullets">
+            <div class="timeline-bullet">Taught computer science subjects including MS Office, internet skills, and
+              programming fundamentals</div>
+            <div class="timeline-bullet">Designed lesson plans and assessments for school-level computer curriculum
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 5: Iqra Science School -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <div>
+              <div class="timeline-role">Math &amp; Computer Teacher</div>
+              <div class="timeline-company">Iqra Science School and College Dhakki</div>
+            </div>
+            <div class="timeline-date">05 Apr 2022 – 25 Dec 2023</div>
+          </div>
+          <div class="timeline-location">📍 Dhakki, Pakistan</div>
+          <div class="timeline-bullets">
+            <div class="timeline-bullet">Taught both Mathematics and Computer Science, covering algebra, geometry, and
+              computational thinking</div>
+            <div class="timeline-bullet">Built strong student engagement through practical demonstrations and real-world
+              examples</div>
+            <div class="timeline-bullet">Developed and delivered comprehensive teaching materials and assessments</div>
+          </div>
+          <a href="https://tinyurl.com/AqeeelAhmad" target="_blank" rel="noopener" class="timeline-link"
+            id="exp-iqra-link">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+            View Reference
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+     EDUCATION SECTION
+══════════════════════════════════════ -->
+  <section id="education" aria-label="Education">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Education</div>
+        <h2 class="section-title">Academic Background</h2>
+        <p class="section-subtitle">Building a strong theoretical and practical foundation in Computer Science and
+          related disciplines.</p>
+      </div>
+
+      <div class="edu-grid">
+
+        <!-- BS CS -->
+        <div class="edu-card reveal">
+          <div class="edu-degree">BS Computer Science</div>
+          <div class="edu-institution">
+            <a href="https://www.uad.edu.pk/" target="_blank" rel="noopener" id="edu-uad-link"
+              style="-webkit-text-fill-color:unset;background:var(--grad-text);-webkit-background-clip:text;background-clip:text;">
+              University of Agriculture, Dera Ismail Khan
+            </a>
+          </div>
+          <div class="edu-location">📍 Dera Ismail Khan, Pakistan</div>
+          <div class="edu-dates">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" />
+            </svg>
+            28 Oct 2021 – 05 Aug 2025
+          </div>
+          <div class="edu-grade">
+            <div>
+              <div class="edu-grade-val">3.75 / 4.0</div>
+              <div class="edu-grade-label">CGPA</div>
+            </div>
+          </div>
+          <a href="https://www.uad.edu.pk/" target="_blank" rel="noopener" class="edu-link" id="edu-uad-website">
+            Visit University Website
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="m9 18 6-6-6-6" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- FSc -->
+        <div class="edu-card reveal">
+          <div class="edu-degree">FSc | Pre-Engineering</div>
+          <div class="edu-institution">Professor Zubair School &amp; College D.I.Khan</div>
+          <div class="edu-location">📍 Dhakki, Pakistan</div>
+          <div class="edu-dates">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" />
+            </svg>
+            05 Sep 2019 – 23 Sep 2021
+          </div>
+          <div class="edu-grade">
+            <div>
+              <div class="edu-grade-val">61.27%</div>
+              <div class="edu-grade-label">Final Grade</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Matriculation -->
+        <div class="edu-card reveal">
+          <div class="edu-degree">Matriculation</div>
+          <div class="edu-institution">Iqra Science School Paharpur, D.I.Khan</div>
+          <div class="edu-location">📍 Paharpur, Pakistan</div>
+          <div class="edu-dates">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" />
+            </svg>
+            08 Apr 2017 – 28 Jun 2021
+          </div>
+          <div class="edu-grade">
+            <div>
+              <div class="edu-grade-val">86.72%</div>
+              <div class="edu-grade-label">Final Grade</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+     PROJECTS SECTION
+══════════════════════════════════════ -->
+  <section id="projects" aria-label="Projects">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Projects</div>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">A selection of my best work — from high-throughput web crawlers and full-stack SaaS
+          platforms to AI-powered learning systems.</p>
+      </div>
+
+      <div class="project-filters reveal">
+        <button class="filter-btn active" data-pfilter="all" id="proj-filter-all">All Projects</button>
+        <button class="filter-btn" data-pfilter="python" id="proj-filter-python">Python & AI</button>
+        <button class="filter-btn" data-pfilter="scraping" id="proj-filter-scraping">Scraping & Automation</button>
+        <button class="filter-btn" data-pfilter="webdev" id="proj-filter-webdev">Web Development</button>
+      </div>
+
+      <div class="projects-grid" id="projects-grid">
+
+        <!-- Project 1: Hadith-Sunnah-Scraper -->
+        <div class="project-card reveal" data-pcategory="scraping python">
+          <div class="project-card-header">
+            <div class="project-badge badge-backend">🕷️ Data Engineering / Scraping</div>
+            <div class="project-name">Hadith-Sunnah-Scraper</div>
+            <p class="project-desc">A high-throughput distributed web crawler and data ingestion pipeline built with
+              Scrapy and Scrapyd. Extracted and structured 124,000+ classical Hadiths across 19 major collections from
+              Sunnah.com into dual MongoDB databases, and published 180+ MB of open datasets.</p>
+          </div>
+          <div class="project-card-body">
+            <div class="project-tech">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Scrapy</span>
+              <span class="tech-badge">Scrapyd</span>
+              <span class="tech-badge">MongoDB</span>
+              <span class="tech-badge">PyMongo</span>
+              <span class="tech-badge">Data Engineering</span>
+            </div>
+          </div>
+          <div class="project-card-footer">
+            <a href="https://github.com/Aqeeel-Ahmad/Hadith-Sunnah-Scraper" target="_blank" rel="noopener"
+              class="project-link project-link-github" id="proj-hadith-github">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z" />
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2: Hum 3 Network -->
+        <div class="project-card reveal" data-pcategory="webdev python">
+          <div class="project-card-header">
+            <div class="project-badge badge-fullstack">⚡ Full-Stack / SaaS</div>
+            <div class="project-name">Hum 3 Network – ISP Billing Platform</div>
+            <p class="project-desc">A full-stack broadband subscription and billing management web application built
+              with Django and PostgreSQL (Supabase). Features dynamic bandwidth speed customization (2–50 Mbps),
+              automated recurring billing lifecycles, EasyPaisa ledger verification, and server-side WeasyPrint PDF
+              invoice generation.</p>
+          </div>
+          <div class="project-card-body">
+            <div class="project-tech">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Django</span>
+              <span class="tech-badge">PostgreSQL</span>
+              <span class="tech-badge">Tailwind CSS</span>
+              <span class="tech-badge">Alpine.js</span>
+              <span class="tech-badge">Supabase</span>
+              <span class="tech-badge">WeasyPrint</span>
+              <span class="tech-badge">Vercel</span>
+            </div>
+          </div>
+          <div class="project-card-footer">
+            <a href="https://hum3network.vercel.app/" target="_blank" rel="noopener"
+              class="project-link project-link-live" id="proj-hum3-live">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              Live Demo
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3: US Healthcare Directory Scraper -->
+        <div class="project-card reveal" data-pcategory="scraping python">
+          <div class="project-card-header">
+            <div class="project-badge badge-backend">⚙️ Web Scraping / Pipeline</div>
+            <div class="project-name">US Healthcare Directory Scraper</div>
+            <p class="project-desc">A scalable web data extraction pipeline using Python, Scrapy, and ScrapeOps
+              Residential Proxy API to harvest 9,000+ verified US physician and clinic profiles. Features
+              reverse-engineered Google Maps JSON RPC extraction, multi-page catalog crawlers, and automated data
+              cleaning.</p>
+          </div>
+          <div class="project-card-body">
+            <div class="project-tech">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Scrapy</span>
+              <span class="tech-badge">ScrapeOps API</span>
+              <span class="tech-badge">Middlewares</span>
+              <span class="tech-badge">Google Maps RPC</span>
+              <span class="tech-badge">JSON Pipelines</span>
+            </div>
+          </div>
+          <div class="project-card-footer">
+            <a href="https://github.com/Aqeeel-Ahmad/US-Doctors-info" target="_blank" rel="noopener"
+              class="project-link project-link-github" id="proj-usdoctors-github">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z" />
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 4: Automated Web Crawler -->
+        <div class="project-card reveal" data-pcategory="scraping python">
+          <div class="project-card-header">
+            <div class="project-badge badge-backend">⚙️ Backend / Automation</div>
+            <div class="project-name">Automated Web Crawler Service</div>
+            <p class="project-desc">A production-grade web scraping engine using Scrapy to crawl multi-page catalogs
+              with pagination handling, remote job scheduling, and zero-loss data ingestion into MongoDB.</p>
+          </div>
+          <div class="project-card-body">
+            <div class="project-tech">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Scrapy</span>
+              <span class="tech-badge">Scrapyd</span>
+              <span class="tech-badge">MongoDB</span>
+              <span class="tech-badge">PyMongo</span>
+            </div>
+          </div>
+          <div class="project-card-footer">
+            <a href="https://github.com/Aqeeel-Ahmad/automated-webCrawler-service" target="_blank" rel="noopener"
+              class="project-link project-link-github" id="proj-crawler-github">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z" />
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 5: MindCraft -->
+        <div class="project-card reveal" data-pcategory="python webdev">
+          <div class="project-card-header">
+            <div class="project-badge badge-fyp">🎓 Final Year Project</div>
+            <div class="project-name">MindCraft</div>
+            <p class="project-desc">A Personalized Online Learning Smart Application — a smart web-based learning system
+              that uses machine learning to recommend personalized courses based on user performance and behavior.</p>
+          </div>
+          <div class="project-card-body">
+            <div class="project-tech">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Django</span>
+              <span class="tech-badge">Scikit-learn</span>
+              <span class="tech-badge">PostgreSQL</span>
+              <span class="tech-badge">HTML/CSS/JS</span>
+            </div>
+          </div>
+          <div class="project-card-footer">
+            <a href="https://github.com/Aqeeel-Ahmad/MindCraft_FYP" target="_blank" rel="noopener"
+              class="project-link project-link-github" id="proj-mindcraft-github">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z" />
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 6: UrbanVibes E-Commerce -->
+        <div class="project-card reveal" data-pcategory="webdev">
+          <div class="project-card-header">
+            <div class="project-badge badge-frontend">🛍️ E-Commerce</div>
+            <div class="project-name">UrbanVibes E-Commerce Fashion Website</div>
+            <p class="project-desc">A full-featured e-commerce fashion website with a dynamic homepage, product
+              listings, shopping cart, and fully responsive design across all device sizes.</p>
+          </div>
+          <div class="project-card-body">
+            <div class="project-tech">
+              <span class="tech-badge">HTML5</span>
+              <span class="tech-badge">CSS3</span>
+              <span class="tech-badge">JavaScript</span>
+              <span class="tech-badge">Responsive Design</span>
+            </div>
+          </div>
+          <div class="project-card-footer">
+            <a href="https://aqeeel-ahmad.github.io/UrbanVibes-E-Commerce-Website/" target="_blank" rel="noopener"
+              class="project-link project-link-live" id="proj-urbanvibes-live">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              Live Demo
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 7: Malik Dhakki Dates Nursery -->
+        <div class="project-card reveal" data-pcategory="webdev">
+          <div class="project-card-header">
+            <div class="project-badge badge-frontend">🌐 Frontend / Web</div>
+            <div class="project-name">Malik Dhakki Dates Nursery</div>
+            <p class="project-desc">A frontend web application designed for a specialized agricultural business to
+              showcase premium palm products, consultation services, and organic farming solutions.</p>
+          </div>
+          <div class="project-card-body">
+            <div class="project-tech">
+              <span class="tech-badge">HTML5</span>
+              <span class="tech-badge">CSS3</span>
+              <span class="tech-badge">JavaScript</span>
+              <span class="tech-badge">Responsive Design</span>
+            </div>
+          </div>
+          <div class="project-card-footer">
+            <a href="https://aqeeel-ahmad.github.io/Malik-Dhakki-Dates-Nursery-/" target="_blank" rel="noopener"
+              class="project-link project-link-live" id="proj-dates-live">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              Live Demo
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 8: Aqeel Ahmad Portfolio -->
+        <!-- <div class="project-card reveal" data-pcategory="webdev">
+          <div class="project-card-header">
+            <div class="project-badge badge-fullstack">💼 Portfolio</div>
+            <div class="project-name">Aqeel Ahmad Portfolio</div>
+            <p class="project-desc">A modern, responsive personal portfolio website developed with HTML5, CSS3, and
+              JavaScript featuring smooth navigation and a dynamic project gallery for frontend web projects.</p>
+          </div>
+          <div class="project-card-body">
+            <div class="project-tech">
+              <span class="tech-badge">HTML5</span>
+              <span class="tech-badge">CSS3</span>
+              <span class="tech-badge">JavaScript</span>
+              <span class="tech-badge">GitHub Pages</span>
+            </div>
+          </div>
+          <div class="project-card-footer">
+            <a href="https://aqeeel-ahmad.github.io/Aqeel_Ahmad-Portfolio/" target="_blank" rel="noopener"
+              class="project-link project-link-live" id="proj-portfolio-live">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              Live Demo
+            </a>
+          </div>
+        </div> -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+     LANGUAGES SECTION
+══════════════════════════════════════ -->
+  <section id="languages" aria-label="Language Skills">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Languages</div>
+        <h2 class="section-title">Language Proficiency</h2>
+        <p class="section-subtitle">Multilingual communication skills bridging local and international professional
+          environments.</p>
+      </div>
+
+      <div class="lang-grid">
+
+        <!-- Saraiki -->
+        <div class="lang-card reveal">
+          <div class="lang-header">
+            <div class="lang-flag">🗣️</div>
+            <div>
+              <div class="lang-name">Saraiki</div>
+              <span class="lang-level lang-level-mother">Mother Tongue</span>
+            </div>
+          </div>
+          <p style="font-size:14px;color:var(--text-secondary);">Native language — full professional and personal
+            proficiency across all communication domains.</p>
+        </div>
+
+        <!-- Urdu -->
+        <div class="lang-card reveal">
+          <div class="lang-header">
+            <div class="lang-flag">🇵🇰</div>
+            <div>
+              <div class="lang-name">Urdu</div>
+              <span class="lang-level">C2 / C1 Proficient</span>
+            </div>
+          </div>
+          <div class="lang-skills-grid">
+            <div class="lang-skill-item">
+              <div class="lang-skill-name">Listening</div>
+              <div class="lang-skill-level">C2</div>
+            </div>
+            <div class="lang-skill-item">
+              <div class="lang-skill-name">Reading</div>
+              <div class="lang-skill-level">C2</div>
+            </div>
+            <div class="lang-skill-item">
+              <div class="lang-skill-name">Writing</div>
+              <div class="lang-skill-level">C1</div>
+            </div>
+            <div class="lang-skill-item">
+              <div class="lang-skill-name">Spoken Prod.</div>
+              <div class="lang-skill-level">C2</div>
+            </div>
+            <div class="lang-skill-item" style="grid-column:1/-1;">
+              <div class="lang-skill-name">Spoken Interaction</div>
+              <div class="lang-skill-level">C2</div>
+            </div>
+          </div>
+          <div class="cefr-scale">
+            <div class="cefr-scale-title">CEFR Level: A1 → A2 → B1 → B2 → C1 → C2</div>
+            <div class="cefr-dots">
+              <div class="cefr-dot filled"></div>
+              <div class="cefr-dot filled"></div>
+              <div class="cefr-dot filled"></div>
+              <div class="cefr-dot filled"></div>
+              <div class="cefr-dot filled"></div>
+              <div class="cefr-dot filled"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- English -->
+        <div class="lang-card reveal">
+          <div class="lang-header">
+            <div class="lang-flag">🇬🇧</div>
+            <div>
+              <div class="lang-name">English</div>
+              <span class="lang-level">C1 / B1 Proficient</span>
+            </div>
+          </div>
+          <div class="lang-skills-grid">
+            <div class="lang-skill-item">
+              <div class="lang-skill-name">Listening</div>
+              <div class="lang-skill-level">C1</div>
+            </div>
+            <div class="lang-skill-item">
+              <div class="lang-skill-name">Reading</div>
+              <div class="lang-skill-level">C1</div>
+            </div>
+            <div class="lang-skill-item">
+              <div class="lang-skill-name">Writing</div>
+              <div class="lang-skill-level">B1</div>
+            </div>
+            <div class="lang-skill-item">
+              <div class="lang-skill-name">Spoken Prod.</div>
+              <div class="lang-skill-level">B1</div>
+            </div>
+            <div class="lang-skill-item" style="grid-column:1/-1;">
+              <div class="lang-skill-name">Spoken Interaction</div>
+              <div class="lang-skill-level">B1</div>
+            </div>
+          </div>
+          <div class="cefr-scale">
+            <div class="cefr-scale-title">CEFR Level: A1 → A2 → B1 → B2 → C1 → C2</div>
+            <div class="cefr-dots">
+              <div class="cefr-dot filled"></div>
+              <div class="cefr-dot filled"></div>
+              <div class="cefr-dot filled"></div>
+              <div class="cefr-dot filled"></div>
+              <div class="cefr-dot filled"></div>
+              <div class="cefr-dot"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+     ACTIVITIES SECTION
+══════════════════════════════════════ -->
+  <section id="activities" aria-label="Extracurricular Activities">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Extra Curriculum</div>
+        <h2 class="section-title">Activities &amp; Soft Skills</h2>
+        <p class="section-subtitle">Beyond coding — a well-rounded professional with strong communication, creativity,
+          and digital skills.</p>
+      </div>
+
+      <div class="activities-grid">
+        <div class="activity-card reveal">
+          <div class="activity-icon">🌐</div>
+          <div class="activity-title">Responsive Web Design</div>
+          <div class="activity-desc">Designed and developed responsive, user-friendly websites using HTML, CSS,
+            JavaScript, and Bootstrap with a focus on modern UI/UX principles.</div>
+        </div>
+        <div class="activity-card reveal">
+          <div class="activity-icon">📝</div>
+          <div class="activity-title">Technical Writing &amp; Editing</div>
+          <div class="activity-desc">Strong writing, editing, and proofreading skills in both English and Urdu, ensuring
+            clarity, accuracy, and effective communication in technical and general content.</div>
+        </div>
+        <div class="activity-card reveal">
+          <div class="activity-icon">📱</div>
+          <div class="activity-title">Social Media Management</div>
+          <div class="activity-desc">Experienced in managing social media platforms to create engaging content, grow
+            audience reach, and maintain brand presence across digital channels.</div>
+        </div>
+        <div class="activity-card reveal">
+          <div class="activity-icon">🎓</div>
+          <div class="activity-title">STEAM Education</div>
+          <div class="activity-desc">Mentored and taught STEAM education to students, integrating Science, Technology,
+            Engineering, Arts, and Mathematics through hands-on learning approaches.</div>
+        </div>
+        <div class="activity-card reveal">
+          <div class="activity-icon">🛠️</div>
+          <div class="activity-title">Digital Tools Proficiency</div>
+          <div class="activity-desc">Proficient in digital tools including MS Office, MS Excel, Canva, and other
+            productivity platforms for documentation, design, and data management tasks.</div>
+        </div>
+        <div class="activity-card reveal">
+          <div class="activity-icon">💬</div>
+          <div class="activity-title">Communication Skills</div>
+          <div class="activity-desc">Excellent verbal and written communication skills — able to translate complex
+            technical concepts into clear, accessible language for diverse audiences.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+     CONTACT SECTION
+══════════════════════════════════════ -->
+  <section id="contact" aria-label="Contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Get In Touch</div>
+        <h2 class="section-title">Let's Work Together</h2>
+        <p class="section-subtitle">Have a project in mind or a role that fits? I'd love to connect — reach out directly
+          via any channel below.</p>
+      </div>
+
+      <div class="contact-inner">
+        <!-- Left: Contact Methods -->
+        <div class="contact-info-col reveal-left">
+          <p class="contact-desc">I'm currently open to new opportunities in Python development, web scraping, AI
+            automation, and full-stack projects. The best way to reach me is through email or WhatsApp for a quick
+            response.</p>
+
+          <div class="contact-methods">
+            <a href="mailto:imaqeelahmad5@gmail.com" class="contact-method" id="contact-email-link">
+              <div class="contact-icon ci-email">📧</div>
+              <div class="contact-method-info">
+                <div class="label">Email</div>
+                <div class="value">imaqeelahmad5@gmail.com</div>
+              </div>
+            </a>
+
+            <a href="https://wa.me/923499242768" target="_blank" rel="noopener" class="contact-method"
+              id="contact-whatsapp-link">
+              <div class="contact-icon ci-whatsapp">💬</div>
+              <div class="contact-method-info">
+                <div class="label">WhatsApp</div>
+                <div class="value">+92 349 9242768</div>
+              </div>
+            </a>
+
+            <a href="tel:+923499242768" class="contact-method" id="contact-phone-link">
+              <div class="contact-icon ci-phone">📞</div>
+              <div class="contact-method-info">
+                <div class="label">Phone</div>
+                <div class="value">(+92) 03499242768</div>
+              </div>
+            </a>
+
+            <a href="http://linkedin.com/in/aqeel-ahmad-a99760316" target="_blank" rel="noopener" class="contact-method"
+              id="contact-linkedin-link">
+              <div class="contact-icon ci-linkedin">🔗</div>
+              <div class="contact-method-info">
+                <div class="label">LinkedIn</div>
+                <div class="value">aqeel-ahmad-a99760316</div>
+              </div>
+            </a>
+
+            <a href="https://people.bayt.com/aqeel-ahmad-93010367" target="_blank" rel="noopener" class="contact-method"
+              id="contact-bayt-link">
+              <div class="contact-icon ci-bayt">🌐</div>
+              <div class="contact-method-info">
+                <div class="label">Bayt Profile</div>
+                <div class="value">people.bayt.com/aqeel-ahmad</div>
+              </div>
+            </a>
+
+            <a href="https://github.com/Aqeeel-Ahmad" target="_blank" rel="noopener" class="contact-method"
+              id="contact-github-link">
+              <div class="contact-icon ci-github">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z" />
+                </svg>
+              </div>
+              <div class="contact-method-info">
+                <div class="label">GitHub</div>
+                <div class="value">github.com/Aqeeel-Ahmad</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: CTA Card -->
+        <div class="contact-cta-col reveal-right">
+          <div class="contact-card">
+            <div class="contact-card-title">Ready to Connect?</div>
+            <p class="contact-card-sub">Click below to open a direct conversation — no forms, no delays.</p>
+            <div class="contact-cta-btns">
+              <a href="mailto:imaqeelahmad5@gmail.com" class="btn-email" id="contact-email-btn">
+                📧 Send Email
+              </a>
+              <a href="https://wa.me/923499242768" target="_blank" rel="noopener" class="btn-whatsapp"
+                id="contact-whatsapp-btn">
+                💬 WhatsApp Chat
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-card" style="padding:28px;text-align:left;">
+            <div
+              style="font-size:13px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;">
+              📍 Current Location</div>
+            <div style="font-size:18px;font-weight:700;margin-bottom:6px;">Mansehra, Pakistan</div>
+            <div style="font-size:14px;color:var(--text-secondary);">Township, 21314 Mansehra</div>
+            <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border);">
+              <div
+                style="font-size:13px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">
+                Download CV</div>
+              <a href="Aqeel_Ahmad_CV.pdf" download="Aqeel_Ahmad_CV.pdf" class="btn btn-primary"
+                style="font-size:14px;padding:12px 24px;" id="contact-download-btn">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                Download CV PDF
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">AQEEL AHMAD</div>
+        <div class="footer-copy">
+          © 2025 Aqeel Ahmad · Python Developer &amp; Web Scraping Specialist · Mansehra, Pakistan
+        </div>
+        <div class="footer-links">
+          <a href="http://linkedin.com/in/aqeel-ahmad-a99760316" target="_blank" rel="noopener" title="LinkedIn"
+            id="footer-linkedin">
+            🔗
+          </a>
+          <a href="https://github.com/Aqeeel-Ahmad" target="_blank" rel="noopener" title="GitHub" id="footer-github">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z" />
+            </svg>
+          </a>
+          <a href="mailto:imaqeelahmad5@gmail.com" title="Email" id="footer-email">📧</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button id="back-top" aria-label="Back to top">↑</button>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
