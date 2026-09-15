@@ -381,7 +381,7 @@
     mobThemeToggleBtn.addEventListener('click', toggleTheme);
   }
 
-  /* ── MAILING FORM HANDLER (DIRECT SEND) ── */
+  /* ── MAILING FORM HANDLER (DIRECT SEND VIA WEB3FORMS) ── */
   const mailingForm = document.getElementById('mailing-form');
   const mailSendBtn = document.getElementById('mail-send-btn');
   if (mailingForm) {
@@ -392,6 +392,8 @@
       const subject = (document.getElementById('mail-subject')?.value || '').trim();
       const message = (document.getElementById('mail-message')?.value || '').trim();
       const statusEl = document.getElementById('form-status');
+      const accessKeyInput = document.getElementById('web3forms-key');
+      const accessKey = accessKeyInput ? accessKeyInput.value.trim() : '';
 
       if (!name || !email || !subject || !message) {
         if (statusEl) {
@@ -412,6 +414,15 @@
         return;
       }
 
+      if (!accessKey || accessKey === 'YOUR_ACCESS_KEY_HERE') {
+        if (statusEl) {
+          statusEl.style.display = 'block';
+          statusEl.className = 'form-status status-error';
+          statusEl.innerHTML = `Web3Forms Access Key is needed once. Get your free key at <a href="https://web3forms.com" target="_blank" rel="noopener" style="text-decoration:underline;color:inherit;font-weight:700;">web3forms.com</a> to eliminate all activation emails forever.`;
+        }
+        return;
+      }
+
       const originalBtnHtml = mailSendBtn ? mailSendBtn.innerHTML : 'Send Mail';
       if (mailSendBtn) {
         mailSendBtn.disabled = true;
@@ -428,36 +439,29 @@
       }
 
       try {
-        const response = await fetch('https://formsubmit.co/ajax/imaqeelahmad5@gmail.com', {
+        const response = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
           },
           body: JSON.stringify({
+            access_key: accessKey,
             name: name,
             email: email,
-            _subject: `[Portfolio Inquiry] ${subject} — from ${name}`,
+            subject: `[Portfolio Inquiry] ${subject} — from ${name}`,
             message: message,
-            _template: 'table',
-            _captcha: 'false'
+            from_name: name
           })
         });
 
         const data = await response.json().catch(() => ({}));
 
-        if (response.ok && (data.success === 'true' || data.success === true)) {
+        if (response.ok && data.success) {
           if (statusEl) {
             statusEl.style.display = 'block';
             statusEl.className = 'form-status status-success';
             statusEl.innerHTML = `✓ Thank you, <strong>${name}</strong>! Your email has been sent directly to Aqeel. I will get back to you shortly.`;
-          }
-          mailingForm.reset();
-        } else if (data.message && data.message.includes('Activation')) {
-          if (statusEl) {
-            statusEl.style.display = 'block';
-            statusEl.className = 'form-status status-success';
-            statusEl.innerHTML = `✓ Message sent directly! (FormSubmit activation email was sent to imaqeelahmad5@gmail.com — click it once to confirm).`;
           }
           mailingForm.reset();
         } else {
@@ -467,7 +471,7 @@
         if (statusEl) {
           statusEl.style.display = 'block';
           statusEl.className = 'form-status status-error';
-          statusEl.innerHTML = `✕ Could not send email automatically. Please reach out directly at <a href="mailto:imaqeelahmad5@gmail.com" style="text-decoration:underline;color:inherit;font-weight:700;">imaqeelahmad5@gmail.com</a> or WhatsApp.`;
+          statusEl.innerHTML = `✕ Could not send email. (${err.message}). Please contact directly at <a href="mailto:imaqeelahmad5@gmail.com" style="text-decoration:underline;color:inherit;font-weight:700;">imaqeelahmad5@gmail.com</a> or WhatsApp.`;
         }
       } finally {
         if (mailSendBtn) {
