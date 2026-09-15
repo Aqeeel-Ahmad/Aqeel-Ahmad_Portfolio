@@ -1410,28 +1410,30 @@
             </div>
           </div>
 
-          <form class="mailing-form" id="mailing-form" novalidate>
+          <form class="mailing-form" id="mailing-form" action="https://formsubmit.co/imaqeelahmad5@gmail.com" method="POST" novalidate>
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
             <div class="form-row">
               <div class="form-group">
                 <label for="mail-name" class="form-label">Your Name</label>
-                <input type="text" id="mail-name" class="form-input" placeholder="e.g. Tanveer Ahmad" required />
+                <input type="text" id="mail-name" name="name" class="form-input" placeholder="e.g. Tanveer Ahmad" required />
               </div>
               <div class="form-group">
                 <label for="mail-email" class="form-label">Your Email</label>
-                <input type="email" id="mail-email" class="form-input" placeholder="e.g. tanveer@example.com"
+                <input type="email" id="mail-email" name="email" class="form-input" placeholder="e.g. tanveer@example.com"
                   required />
               </div>
             </div>
 
             <div class="form-group">
               <label for="mail-subject" class="form-label">Subject</label>
-              <input type="text" id="mail-subject" class="form-input"
+              <input type="text" id="mail-subject" name="_subject" class="form-input"
                 placeholder="e.g. Python Scraping Project / Hiring" required />
             </div>
 
             <div class="form-group">
               <label for="mail-message" class="form-label">Your Message</label>
-              <textarea id="mail-message" class="form-input form-textarea" rows="4"
+              <textarea id="mail-message" name="message" class="form-input form-textarea" rows="4"
                 placeholder="Write your message here..." required></textarea>
             </div>
 
@@ -1444,7 +1446,7 @@
                 </svg>
                 Send Mail
               </button>
-              <span class="mailing-note">Direct to default mail</span>
+              <span class="mailing-note">Direct to inbox</span>
             </div>
 
             <div class="form-status" id="form-status" style="display:none;"></div>

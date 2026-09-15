@@ -381,10 +381,11 @@
     mobThemeToggleBtn.addEventListener('click', toggleTheme);
   }
 
-  /* ── MAILING FORM HANDLER ── */
+  /* ── MAILING FORM HANDLER (DIRECT SEND) ── */
   const mailingForm = document.getElementById('mailing-form');
+  const mailSendBtn = document.getElementById('mail-send-btn');
   if (mailingForm) {
-    mailingForm.addEventListener('submit', (e) => {
+    mailingForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const name = (document.getElementById('mail-name')?.value || '').trim();
       const email = (document.getElementById('mail-email')?.value || '').trim();
@@ -411,22 +412,69 @@
         return;
       }
 
-      const defaultRecipient = 'imaqeelahmad5@gmail.com';
-      const mailSubject = encodeURIComponent(`[Portfolio Inquiry] ${subject} — from ${name}`);
-      const mailBody = encodeURIComponent(
-        `Hi Aqeel,\n\n${message}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nSender Details:\nName: ${name}\nEmail: ${email}`
-      );
-
-      const mailtoUrl = `mailto:${defaultRecipient}?subject=${mailSubject}&body=${mailBody}`;
-
-      if (statusEl) {
-        statusEl.style.display = 'block';
-        statusEl.className = 'form-status status-success';
-        statusEl.innerHTML = `✓ Ready! Opening your email app to send to <strong>${defaultRecipient}</strong>...<br><span style="font-size:11.5px;opacity:0.9;">If your app doesn't open automatically, <a href="${mailtoUrl}" style="text-decoration:underline;color:inherit;font-weight:700;">click here to open</a>.</span>`;
+      const originalBtnHtml = mailSendBtn ? mailSendBtn.innerHTML : 'Send Mail';
+      if (mailSendBtn) {
+        mailSendBtn.disabled = true;
+        mailSendBtn.innerHTML = `
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="animation: spin 0.8s linear infinite;">
+            <path d="M21 12a9 9 0 1 1-6.219-8.56"></path>
+          </svg>
+          Sending...
+        `;
       }
 
-      // Open mailto link
-      window.location.href = mailtoUrl;
+      if (statusEl) {
+        statusEl.style.display = 'none';
+      }
+
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/imaqeelahmad5@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            _subject: `[Portfolio Inquiry] ${subject} — from ${name}`,
+            message: message,
+            _template: 'table',
+            _captcha: 'false'
+          })
+        });
+
+        const data = await response.json().catch(() => ({}));
+
+        if (response.ok && (data.success === 'true' || data.success === true)) {
+          if (statusEl) {
+            statusEl.style.display = 'block';
+            statusEl.className = 'form-status status-success';
+            statusEl.innerHTML = `✓ Thank you, <strong>${name}</strong>! Your email has been sent directly to Aqeel. I will get back to you shortly.`;
+          }
+          mailingForm.reset();
+        } else if (data.message && data.message.includes('Activation')) {
+          if (statusEl) {
+            statusEl.style.display = 'block';
+            statusEl.className = 'form-status status-success';
+            statusEl.innerHTML = `✓ Message sent directly! (FormSubmit activation email was sent to imaqeelahmad5@gmail.com — click it once to confirm).`;
+          }
+          mailingForm.reset();
+        } else {
+          throw new Error(data.message || 'Submission failed');
+        }
+      } catch (err) {
+        if (statusEl) {
+          statusEl.style.display = 'block';
+          statusEl.className = 'form-status status-error';
+          statusEl.innerHTML = `✕ Could not send email automatically. Please reach out directly at <a href="mailto:imaqeelahmad5@gmail.com" style="text-decoration:underline;color:inherit;font-weight:700;">imaqeelahmad5@gmail.com</a> or WhatsApp.`;
+        }
+      } finally {
+        if (mailSendBtn) {
+          mailSendBtn.disabled = false;
+          mailSendBtn.innerHTML = originalBtnHtml;
+        }
+      }
     });
   }
 
