@@ -381,5 +381,54 @@
     mobThemeToggleBtn.addEventListener('click', toggleTheme);
   }
 
+  /* ── MAILING FORM HANDLER ── */
+  const mailingForm = document.getElementById('mailing-form');
+  if (mailingForm) {
+    mailingForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = (document.getElementById('mail-name')?.value || '').trim();
+      const email = (document.getElementById('mail-email')?.value || '').trim();
+      const subject = (document.getElementById('mail-subject')?.value || '').trim();
+      const message = (document.getElementById('mail-message')?.value || '').trim();
+      const statusEl = document.getElementById('form-status');
+
+      if (!name || !email || !subject || !message) {
+        if (statusEl) {
+          statusEl.style.display = 'block';
+          statusEl.className = 'form-status status-error';
+          statusEl.textContent = 'Please fill out all fields before sending.';
+        }
+        return;
+      }
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        if (statusEl) {
+          statusEl.style.display = 'block';
+          statusEl.className = 'form-status status-error';
+          statusEl.textContent = 'Please enter a valid email address.';
+        }
+        return;
+      }
+
+      const defaultRecipient = 'imaqeelahmad5@gmail.com';
+      const mailSubject = encodeURIComponent(`[Portfolio Inquiry] ${subject} — from ${name}`);
+      const mailBody = encodeURIComponent(
+        `Hi Aqeel,\n\n${message}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nSender Details:\nName: ${name}\nEmail: ${email}`
+      );
+
+      const mailtoUrl = `mailto:${defaultRecipient}?subject=${mailSubject}&body=${mailBody}`;
+
+      if (statusEl) {
+        statusEl.style.display = 'block';
+        statusEl.className = 'form-status status-success';
+        statusEl.innerHTML = `✓ Ready! Opening your email app to send to <strong>${defaultRecipient}</strong>...<br><span style="font-size:11.5px;opacity:0.9;">If your app doesn't open automatically, <a href="${mailtoUrl}" style="text-decoration:underline;color:inherit;font-weight:700;">click here to open</a>.</span>`;
+      }
+
+      // Open mailto link
+      window.location.href = mailtoUrl;
+    });
+  }
+
   console.log('%c🚀 Aqeel Ahmad Portfolio Loaded', 'color:#06b6d4;font-size:16px;font-weight:bold;');
 })();
