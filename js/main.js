@@ -393,7 +393,10 @@
       const message = (document.getElementById('mail-message')?.value || '').trim();
       const statusEl = document.getElementById('form-status');
       const accessKeyInput = document.getElementById('web3forms-key');
-      const accessKey = accessKeyInput ? accessKeyInput.value.trim() : '';
+      let accessKey = accessKeyInput ? accessKeyInput.value.trim() : '';
+      if (!accessKey || accessKey === 'YOUR_ACCESS_KEY_HERE') {
+        accessKey = '49d51823-6352-4fb7-8d86-a9f866072c6f';
+      }
 
       if (!name || !email || !subject || !message) {
         if (statusEl) {
@@ -414,7 +417,7 @@
         return;
       }
 
-      if (!accessKey || accessKey === 'YOUR_ACCESS_KEY_HERE') {
+      if (!accessKey) {
         if (statusEl) {
           statusEl.style.display = 'block';
           statusEl.className = 'form-status status-error';
