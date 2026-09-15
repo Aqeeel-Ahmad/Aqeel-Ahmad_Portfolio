@@ -28,6 +28,17 @@
       display: inline-block;
     }
   </style>
+  <!-- Theme detection script (prevents flash of dark/light on load) -->
+  <script>
+    (function () {
+      try {
+        var savedTheme = localStorage.getItem('portfolio-theme');
+        if (savedTheme === 'light') {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {}
+    })();
+  </script>
 </head>
 
 <body>
@@ -62,6 +73,22 @@
         <a href="#contact" id="nav-contact">Contact</a>
       </div>
       <div class="nav-cta">
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle light or dark theme" title="Toggle light/dark theme">
+          <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
         <a href="Aqeel_Ahmad_CV.pdf" download="Aqeel_Ahmad_CV.pdf" class="nav-download" id="nav-download-btn">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
             stroke-linecap="round" stroke-linejoin="round">
@@ -80,6 +107,25 @@
 
   <!-- Mobile Nav -->
   <div class="mobile-nav" id="mobile-nav">
+    <div class="mobile-theme-row">
+      <span class="mobile-theme-label">Theme Mode</span>
+      <button class="theme-toggle-btn" id="mob-theme-toggle" aria-label="Toggle light or dark theme" title="Toggle light/dark theme">
+        <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+    </div>
     <a href="#about" id="mob-about">About</a>
     <a href="#skills" id="mob-skills">Skills</a>
     <a href="#experience" id="mob-experience">Experience</a>
@@ -171,8 +217,8 @@
             <img src="aqeel_profile.jpg" alt="Aqeel Ahmad – Python Developer" loading="eager" />
           </div>
           <div class="photo-badge">
-            <div class="photo-badge-val">BS CS</div>
-            <div class="photo-badge-label">UAD · 2025</div>
+            <div class="photo-badge-val">Scraper</div>
+            <div class="photo-badge-label"><strong>Python &amp; Web Developer</strong></div>
           </div>
         </div>
       </div>
@@ -307,14 +353,76 @@
 
       <div class="skills-filter reveal">
         <button class="filter-btn active" data-filter="all" id="skill-filter-all">All</button>
-        <button class="filter-btn" data-filter="web" id="skill-filter-web">Web Development</button>
         <button class="filter-btn" data-filter="python" id="skill-filter-python">Python & Automation</button>
+        <button class="filter-btn" data-filter="web" id="skill-filter-web">Web Development</button>
         <button class="filter-btn" data-filter="data" id="skill-filter-data">Data & Databases</button>
         <button class="filter-btn" data-filter="tools" id="skill-filter-tools">Tools & Software</button>
       </div>
 
       <div class="skills-grid" id="skills-grid">
+        <!-- Python, Web Scraping & Automation -->
+        <div class="skill-card reveal" data-category="python">
+          <div class="skill-header">
+            <div class="skill-icon">🕷️</div>
+            <div>
+              <div class="skill-name">Scrapy</div>
+              <div class="skill-category">Web Scraping</div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="88"></div>
+          </div>
+        </div>
+        <div class="skill-card reveal" data-category="python">
+          <div class="skill-header">
+            <div class="skill-icon">🚀</div>
+            <div>
+              <div class="skill-name">Scrapyd</div>
+              <div class="skill-category">Crawler Deployment</div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="82"></div>
+          </div>
+        </div>
+        <div class="skill-card reveal" data-category="python">
+          <div class="skill-header">
+            <div class="skill-icon">🐍</div>
+            <div>
+              <div class="skill-name">Python</div>
+              <div class="skill-category">Programming Language</div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="90"></div>
+          </div>
+        </div>
+        <div class="skill-card reveal" data-category="python">
+          <div class="skill-header">
+            <div class="skill-icon">🤖</div>
+            <div>
+              <div class="skill-name">AI Automation</div>
+              <div class="skill-category">Python & AI</div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="80"></div>
+          </div>
+        </div>
+
         <!-- Web Development -->
+        <div class="skill-card reveal" data-category="web">
+          <div class="skill-header">
+            <div class="skill-icon">🐍</div>
+            <div>
+              <div class="skill-name">Django</div>
+              <div class="skill-category">Web Framework</div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="82"></div>
+          </div>
+        </div>
         <div class="skill-card reveal" data-category="web">
           <div class="skill-header">
             <div class="skill-icon">🌐</div>
@@ -353,18 +461,6 @@
         </div>
         <div class="skill-card reveal" data-category="web">
           <div class="skill-header">
-            <div class="skill-icon">🐍</div>
-            <div>
-              <div class="skill-name">Django</div>
-              <div class="skill-category">Web Framework</div>
-            </div>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="82"></div>
-          </div>
-        </div>
-        <div class="skill-card reveal" data-category="web">
-          <div class="skill-header">
             <div class="skill-icon">📱</div>
             <div>
               <div class="skill-name">Responsive Design</div>
@@ -373,67 +469,6 @@
           </div>
           <div class="skill-bar">
             <div class="skill-fill" data-width="90"></div>
-          </div>
-        </div>
-        <!-- Python & Automation -->
-        <div class="skill-card reveal" data-category="python">
-          <div class="skill-header">
-            <div class="skill-icon">🐍</div>
-            <div>
-              <div class="skill-name">Python</div>
-              <div class="skill-category">Programming Language</div>
-            </div>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="90"></div>
-          </div>
-        </div>
-        <div class="skill-card reveal" data-category="python">
-          <div class="skill-header">
-            <div class="skill-icon">🕷️</div>
-            <div>
-              <div class="skill-name">Scrapy</div>
-              <div class="skill-category">Web Scraping</div>
-            </div>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="88"></div>
-          </div>
-        </div>
-        <div class="skill-card reveal" data-category="python">
-          <div class="skill-header">
-            <div class="skill-icon">🚀</div>
-            <div>
-              <div class="skill-name">Scrapyd</div>
-              <div class="skill-category">Crawler Deployment</div>
-            </div>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="82"></div>
-          </div>
-        </div>
-        <div class="skill-card reveal" data-category="python">
-          <div class="skill-header">
-            <div class="skill-icon">🤖</div>
-            <div>
-              <div class="skill-name">AI Automation</div>
-              <div class="skill-category">Python & AI</div>
-            </div>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="80"></div>
-          </div>
-        </div>
-        <div class="skill-card reveal" data-category="python">
-          <div class="skill-header">
-            <div class="skill-icon">📊</div>
-            <div>
-              <div class="skill-name">Scikit-learn</div>
-              <div class="skill-category">Machine Learning</div>
-            </div>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="72"></div>
           </div>
         </div>
         <!-- Data & Databases -->
@@ -498,7 +533,7 @@
             <div class="skill-fill" data-width="95"></div>
           </div>
         </div>
-        <div class="skill-card reveal" data-category="tools">
+        <!-- <div class="skill-card reveal" data-category="tools">
           <div class="skill-header">
             <div class="skill-icon">📱</div>
             <div>
@@ -509,7 +544,7 @@
           <div class="skill-bar">
             <div class="skill-fill" data-width="80"></div>
           </div>
-        </div>
+        </div> -->
         <div class="skill-card reveal" data-category="tools">
           <div class="skill-header">
             <div class="skill-icon">🎭</div>
@@ -1082,8 +1117,39 @@
               <span class="lang-level lang-level-mother">Mother Tongue</span>
             </div>
           </div>
-          <p style="font-size:14px;color:var(--text-secondary);">Native language — full professional and personal
-            proficiency across all communication domains.</p>
+          <div class="lang-skills-grid">
+            <div class="lang-skill-item">
+              <div class="lang-skill-name">Listening</div>
+              <div class="lang-skill-level" style="background: linear-gradient(135deg,#f59e0b,#ef4444); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Native</div>
+            </div>
+            <div class="lang-skill-item">
+              <div class="lang-skill-name">Reading</div>
+              <div class="lang-skill-level" style="background: linear-gradient(135deg,#f59e0b,#ef4444); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Native</div>
+            </div>
+            <div class="lang-skill-item">
+              <div class="lang-skill-name">Writing</div>
+              <div class="lang-skill-level" style="background: linear-gradient(135deg,#f59e0b,#ef4444); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Native</div>
+            </div>
+            <div class="lang-skill-item">
+              <div class="lang-skill-name">Spoken Prod.</div>
+              <div class="lang-skill-level" style="background: linear-gradient(135deg,#f59e0b,#ef4444); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Native</div>
+            </div>
+            <div class="lang-skill-item" style="grid-column:1/-1;">
+              <div class="lang-skill-name">Spoken Interaction</div>
+              <div class="lang-skill-level" style="background: linear-gradient(135deg,#f59e0b,#ef4444); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Native</div>
+            </div>
+          </div>
+          <div class="cefr-scale">
+            <div class="cefr-scale-title">Proficiency: Native Mastery / First Language</div>
+            <div class="cefr-dots">
+              <div class="cefr-dot filled" style="background: linear-gradient(135deg,#f59e0b,#ef4444);"></div>
+              <div class="cefr-dot filled" style="background: linear-gradient(135deg,#f59e0b,#ef4444);"></div>
+              <div class="cefr-dot filled" style="background: linear-gradient(135deg,#f59e0b,#ef4444);"></div>
+              <div class="cefr-dot filled" style="background: linear-gradient(135deg,#f59e0b,#ef4444);"></div>
+              <div class="cefr-dot filled" style="background: linear-gradient(135deg,#f59e0b,#ef4444);"></div>
+              <div class="cefr-dot filled" style="background: linear-gradient(135deg,#f59e0b,#ef4444);"></div>
+            </div>
+          </div>
         </div>
 
         <!-- Urdu -->

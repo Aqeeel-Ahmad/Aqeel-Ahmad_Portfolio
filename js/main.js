@@ -49,9 +49,12 @@
       if (this.y > H + 10) this.y = -10;
     }
     draw() {
+      const isLight = document.documentElement.getAttribute('data-theme') === 'light';
       ctx.beginPath();
-      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(6,182,212,${this.alpha})`;
+      ctx.arc(this.x, this.y, isLight ? this.r * 1.15 : this.r, 0, Math.PI * 2);
+      ctx.fillStyle = isLight
+        ? `rgba(8, 145, 178, ${Math.min(1, this.alpha * 1.3)})`
+        : `rgba(6, 182, 212, ${this.alpha})`;
       ctx.fill();
     }
   }
@@ -59,18 +62,24 @@
   for (let i = 0; i < PARTICLE_COUNT; i++) particles.push(new Particle());
 
   function drawLines() {
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
     for (let i = 0; i < particles.length; i++) {
       for (let j = i + 1; j < particles.length; j++) {
         const dx = particles[i].x - particles[j].x;
         const dy = particles[i].y - particles[j].y;
         const dist = Math.sqrt(dx * dx + dy * dy);
         if (dist < MAX_DIST) {
-          const alpha = (1 - dist / MAX_DIST) * 0.15;
+          const ratio = (1 - dist / MAX_DIST);
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(6,182,212,${alpha})`;
-          ctx.lineWidth = 1;
+          if (isLight) {
+            ctx.strokeStyle = `rgba(8, 145, 178, ${ratio * 0.32})`;
+            ctx.lineWidth = 1.2;
+          } else {
+            ctx.strokeStyle = `rgba(6, 182, 212, ${ratio * 0.15})`;
+            ctx.lineWidth = 1;
+          }
           ctx.stroke();
         }
       }
@@ -349,6 +358,28 @@
     }, { threshold: 0.4 });
     cardObserver.observe(card);
   });
+
+  /* ── THEME TOGGLE ── */
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  const mobThemeToggleBtn = document.getElementById('mob-theme-toggle');
+
+  function toggleTheme() {
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    if (isLight) {
+      document.documentElement.removeAttribute('data-theme');
+      try { localStorage.setItem('portfolio-theme', 'dark'); } catch (e) {}
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      try { localStorage.setItem('portfolio-theme', 'light'); } catch (e) {}
+    }
+  }
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', toggleTheme);
+  }
+  if (mobThemeToggleBtn) {
+    mobThemeToggleBtn.addEventListener('click', toggleTheme);
+  }
 
   console.log('%c🚀 Aqeel Ahmad Portfolio Loaded', 'color:#06b6d4;font-size:16px;font-weight:bold;');
 })();
