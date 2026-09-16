@@ -363,16 +363,29 @@
   const themeToggleBtn = document.getElementById('theme-toggle');
   const mobThemeToggleBtn = document.getElementById('mob-theme-toggle');
 
+  function updateThemeMeta(theme) {
+    const meta = document.getElementById('theme-meta');
+    if (meta) {
+      meta.setAttribute('content', theme === 'light' ? '#f8fafc' : '#080c18');
+    }
+  }
+
   function toggleTheme() {
     const isLight = document.documentElement.getAttribute('data-theme') === 'light';
     if (isLight) {
       document.documentElement.removeAttribute('data-theme');
       try { localStorage.setItem('portfolio-theme', 'dark'); } catch (e) {}
+      updateThemeMeta('dark');
     } else {
       document.documentElement.setAttribute('data-theme', 'light');
       try { localStorage.setItem('portfolio-theme', 'light'); } catch (e) {}
+      updateThemeMeta('light');
     }
   }
+
+  // Initial meta color sync based on active theme
+  const initialIsLight = document.documentElement.getAttribute('data-theme') === 'light';
+  updateThemeMeta(initialIsLight ? 'light' : 'dark');
 
   if (themeToggleBtn) {
     themeToggleBtn.addEventListener('click', toggleTheme);

@@ -28,13 +28,17 @@
       display: inline-block;
     }
   </style>
-  <!-- Theme detection script (prevents flash of dark/light on load) -->
+  <meta name="theme-color" content="#080c18" id="theme-meta" />
+
+  <!-- Theme detection script (defaults to original Dark Obsidian theme) -->
   <script>
     (function () {
       try {
         var savedTheme = localStorage.getItem('portfolio-theme');
         if (savedTheme === 'light') {
           document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+          document.documentElement.removeAttribute('data-theme');
         }
       } catch (e) { }
     })();
